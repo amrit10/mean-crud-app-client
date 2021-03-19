@@ -1,0 +1,15 @@
+<div class="card" style = "width: 15rem;">
+    <!-- <img class="card-img-top" src="https://www.rollingstone.com/wp-content/uploads/2021/03/jack-dorsey-selling-first-tweet-nft.jpg?resize=1800,1200&w=450" alt="Card image cap"> -->
+    <img class="card-img-top img-responsive" [src]="'http://localhost:8080/' + employee.photo" alt="employee_image">
+    <div class="card-body">
+      <h5 class="card-title">{{ employee.name }}</h5>
+      <p class="card-text">DOB: {{ employee.dob }}
+      <p class="card-text">Salary: ${{ employee.salary.toLocaleString() }}
+      <p class="card-text">EID: {{ employee.eid }}</p>
+      <span class="badge badge-info mr-1" *ngFor = "let skill of employee.skills">{{ skill }}</span>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="btn btn-secondary m-1" (click) = "onEditEmployee($event)">Edit</a>
+      <a href="#" class="btn btn-danger m-1" (click) = "onDeleteEmployee()">Delete</a>
+    </div>
+</div>

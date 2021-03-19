@@ -1,0 +1,13 @@
+<nav aria-label="Page navigation example" (click) = "onPageClick($event)">
+    <ul class="pagination justify-content-center">
+        <li class="page-item" *ngIf = "hasPreviousPage">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item" *ngIf = "currentPage - 1 > previousPage"><a class="page-link" href="#">1</a></li>
+        <li class="page-item" *ngIf = "hasPreviousPage"><a class="page-link" href="#">{{ previousPage }}</a></li>
+        <li class="page-item active"><a class="page-link" href="#">{{ currentPage }}</a></li>
+        <li class="page-item" *ngIf = "hasNextPage"><a class="page-link" href="#">{{ nextPage }}</a></li>
+        <li class="page-item" *ngIf = "lastPage > currentPage + 1"><a class="page-link" href="#">{{ lastPage }}</a></li>
+        <li class="page-item" *ngIf = "hasNextPage"><a class="page-link" href="#">Next</a></li>
+    </ul>
+</nav>

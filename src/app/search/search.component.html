@@ -1,0 +1,21 @@
+<app-search-bar (searchInputEvent) = "onSearchHandler($event)"></app-search-bar>
+<div class="text-center m-5"  *ngIf = "this.isFetching" >
+    <div class="spinner-border" style = "width: 15rem; height: 15rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<div *ngIf = "!this.isFetching && this.loadedEmployees.length === 0">
+    <h2><span class="badge badge-secondary">No Employees Found</span></h2>
+</div>
+<app-employee-list *ngIf = "!this.isFetching" (deleteEmployeeEventUp) = "onDeleteEmployeeUp($event)" [loadedEmployees] = "loadedEmployees"></app-employee-list>
+<app-pagination
+     *ngIf = "this.loadedEmployees.length > 0 && !this.isFetching"
+    [currentPage] = "this.currentPage"
+    [nextPage] = "this.nextPage"
+    [previousPage] = "this.previousPage"
+    [lastPage] = "this.lastPage"
+    [hasNextPage] = "this.hasNextPage"
+    [hasPreviousPage] = "this.hasPreviousPage" 
+
+    (paginationEvent) = "onPaginationEventhandler($event)"
+     ></app-pagination>

@@ -1,0 +1,4 @@
+<div class="card-group">
+    <app-employee (deleteEmployeeEvent) = "onDeleteEmployee($event)" class = "m-2" *ngFor = "let employee of loadedEmployees" [employee] = "employee"></app-employee>
+</div>
+  
