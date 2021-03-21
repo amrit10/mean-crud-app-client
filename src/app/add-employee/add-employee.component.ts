@@ -83,7 +83,7 @@ export class AddEmployeeComponent implements OnInit {
     fd.append('image', employeeData.image);
     fd.append('skills', JSON.stringify(skills));
 
-    this.http.post('http://localhost:8080/addEmployee', fd)
+    this.http.post('http://localhost:3000/addEmployee', fd)
       .subscribe(
         response => {
           this.router.navigate(['/']);

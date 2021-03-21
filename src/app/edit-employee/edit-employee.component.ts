@@ -32,7 +32,7 @@ export class EditEmployeeComponent implements OnInit {
 
   private initForm() {
     const employeeId = this.currentEmployeeId
-    const URL = 'http://localhost:8080/getEmployee/'+employeeId;
+    const URL = 'http://localhost:3000/getEmployee/'+employeeId;
     this.http.get(URL)
     .subscribe(employee => {
       const emp = employee['employee'];
@@ -99,7 +99,7 @@ export class EditEmployeeComponent implements OnInit {
     fd.append('skills', JSON.stringify(skills));
     fd.append('_id', this.currentEmployeeId);
 
-    this.http.put('http://localhost:8080/editEmployee', fd)
+    this.http.put('http://localhost:3000/editEmployee', fd)
       .subscribe(
         response => {
           this.router.navigate(['/']);
@@ -116,7 +116,7 @@ export class EditEmployeeComponent implements OnInit {
     // delete emplpoyee
     this.isEditing = true;
     const employeeId = this.currentEmployeeId;
-    this.http.delete('http://localhost:8080/deleteEmployee/'+ employeeId)
+    this.http.delete('http://localhost:3000/deleteEmployee/'+ employeeId)
       .subscribe(
         response => {
           // this.deleteEmployeeEvent.emit(employeeId);

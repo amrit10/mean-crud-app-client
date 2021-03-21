@@ -28,11 +28,11 @@ export class SearchComponent implements OnInit {
     let URL;
     if(!page) page = '1';
     if(search && page) {
-      URL = 'http://localhost:8080/getEmployees?search='+search + '&page=' + page;
+      URL = 'http://localhost:3000/getEmployees?search='+search + '&page=' + page;
     } else if(page && !search) {
-      URL = 'http://localhost:8080/getEmployees?page='+page ;
+      URL = 'http://localhost:3000/getEmployees?page='+page ;
     } else {
-      URL = 'http://localhost:8080/getEmployees';
+      URL = 'http://localhost:3000/getEmployees';
     }
 
     this.http.get(URL)

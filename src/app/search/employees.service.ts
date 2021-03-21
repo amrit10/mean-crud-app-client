@@ -8,7 +8,7 @@ export class EmployeesService{
     constructor(private http: HttpClient){}
 
     fetchEmployees() {
-        this.http.get('http://localhost:8080/getEmployees')
+        this.http.get('http://localhost:3000/getEmployees')
             .pipe(map(responseData => {
                 const employeesArray = [];
                 for(const key in responseData){

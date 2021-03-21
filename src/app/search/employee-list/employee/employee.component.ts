@@ -21,7 +21,7 @@ export class EmployeeComponent implements OnInit {
   onDeleteEmployee() {
     // delete emplpoyee
     const employeeId = this.employee['_id'];
-    this.http.delete('http://localhost:8080/deleteEmployee/'+ employeeId)
+    this.http.delete('http://localhost:3000/deleteEmployee/'+ employeeId)
       .subscribe(response => {
         this.deleteEmployeeEvent.emit(employeeId);
         this.toastr.info('Employee Removed!')
